@@ -102,7 +102,7 @@ def post_to_wordpress(title, content, img_url, img_keyword):
 def generate_ai_content(title, current_key):
     """Minta Gemini menulis artikel dan memberikan keyword gambar."""
     genai.configure(api_key=current_key)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     
     prompt = f"""
     Bertindaklah sebagai penulis blog profesional.
@@ -175,4 +175,5 @@ if st.button("🚀 MULAI PROSES AUTOBLOG"):
                 time.sleep(2) # Jeda aman
             
             st.balloons()
+
             st.success(f"Selesai! {processed_count} artikel telah diproses.")
